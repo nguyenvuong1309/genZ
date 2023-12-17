@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
     const navigate = useNavigate();
     return (
-        <div className='mt-5'>
+        <div className=''>
             <div onClick={() => { navigate('/stand-for-northside') }}>
                 <img src={main} alt="" />
             </div>

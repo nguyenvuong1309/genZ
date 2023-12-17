@@ -9,7 +9,7 @@ import ProductItem from "../components/ProductItem";
 const BubbleGumPage = () => {
     return (
         <>
-            <div className='flex justify-center mt-5 mb-5'>
+            <div className='flex justify-center pt-36 mb-5'>
                 <div className='w-11/12 flex justify-between text-lg'>
                     <div>Danh mục</div>
                     <div>Tìm theo +</div>

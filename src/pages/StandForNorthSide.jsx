@@ -7,7 +7,7 @@ import ProductItem from '../components/ProductItem';
 const StandForNorthSide = () => {
     return (
         <div>
-            <div className='flex justify-center mt-5'>
+            <div className='flex justify-center pt-36'>
                 <img src={stand_for_north_side} alt="" />
             </div>
             <div className='flex justify-center mt-5 mb-5'>

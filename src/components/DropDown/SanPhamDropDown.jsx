@@ -1,9 +1,28 @@
 
 
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+
 
 
 
 const SanPhamDropDown = () => {
+
+    const location = useLocation();
+    const [scrollPosition, setScrollPosition] = useState(0);
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
+
+
     return (
         <>
             <div className="group inline-block">
@@ -11,7 +30,7 @@ const SanPhamDropDown = () => {
                     className="flex justify-center items-center "
                 // className="outline-none focus:outline-none border px-3 py-1 bg-white rounded-sm flex items-center min-w-32"
                 >
-                    <span className="">SẢN PHẨM</span>
+                    <span className="hover:text-red-500">SẢN PHẨM</span>
                     <span>
                         <svg
                             className="fill-current h-4 w-4 transform group-hover:-rotate-180
@@ -27,7 +46,7 @@ const SanPhamDropDown = () => {
                 </button>
                 <ul
                     className="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute left-[2%] right-[2%] visible
-                    transition duration-150 ease-in-out origin-top min-w-56 w-[96%]"
+                    transition duration-150 ease-in-out origin-top min-w-56 w-[96%] text-black"
                 >
                     {/* <li className="rounded-sm relative px-3 py-1 hover:bg-gray-100">
                         <button
@@ -61,30 +80,30 @@ const SanPhamDropDown = () => {
 
                     <div className="h-48 w-full">
                         <div className="w-[90%] grid grid-cols-[1fr_1fr_1fr_1fr]">
-                            <div className="font-bold justify-center">STAND FOR NORTHSIDE</div>
+                            <div className="font-bold justify-center ">STAND FOR NORTHSIDE</div>
                             <div>
                                 <div>TOP</div>
                                 <div>
-                                    <div>T-Shirt</div>
-                                    <div>Shirt & Polo</div>
-                                    <div>Hoodie & Sweatshirt</div>
-                                    <div>Jacket</div>
-                                    <div>Women</div>
+                                    <div className="hover:text-red-500">T-Shirt</div>
+                                    <div className="hover:text-red-500">Shirt & Polo</div>
+                                    <div className="hover:text-red-500">Hoodie & Sweatshirt</div>
+                                    <div className="hover:text-red-500">Jacket</div>
+                                    <div className="hover:text-red-500">Women</div>
                                 </div>
                             </div>
                             <div>
                                 <div>BOTTOM</div>
                                 <div>
-                                    <div>Pants</div>
-                                    <div>Shorts</div>
+                                    <div className="hover:text-red-500">Pants</div>
+                                    <div className="hover:text-red-500">Shorts</div>
                                 </div>
                             </div>
                             <div>
                                 <div>ACCESSORY</div>
                                 <div>
-                                    <div>Bag & Backpack</div>
-                                    <div>Hat</div>
-                                    <div>Others</div>
+                                    <div className="hover:text-red-500">Bag & Backpack</div>
+                                    <div className="hover:text-red-500">Hat</div>
+                                    <div className="hover:text-red-500">Others</div>
                                 </div>
                             </div>
                         </div>

@@ -1,9 +1,24 @@
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 
 
 
 
 const NewArrivalDropDown = () => {
+    const location = useLocation();
+    const [scrollPosition, setScrollPosition] = useState(0);
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
     return (
         <>
             <div className="group inline-block">
@@ -11,7 +26,7 @@ const NewArrivalDropDown = () => {
                     className="flex justify-center items-center"
                 // className="outline-none focus:outline-none border px-3 py-1 bg-white rounded-sm flex items-center min-w-32"
                 >
-                    <span className="">NEW ARRIVAL</span>
+                    <span className="hover:text-red-500">NEW ARRIVAL</span>
                     <span>
                         <svg
                             className="fill-current h-4 w-4 transform group-hover:-rotate-180
@@ -26,14 +41,17 @@ const NewArrivalDropDown = () => {
                     </span>
                 </button>
                 <ul
-                    className="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute 
-                    transition duration-150 ease-in-out origin-top min-w-56 w-56"
+                    className={
+                        "bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-150 ease-in-out origin-top min-w-56 w-56 "
+                            + (location.pathname === "/" && scrollPosition === 0) ? "bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-150 ease-in-out origin-top min-w-56 w-56 text-black" :
+                            "bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute  transition duration-150 ease-in-out origin-top min-w-56 w-56"
+                    }
                 >
                     <li className="rounded-sm relative px-3 py-1 hover:bg-gray-100">
                         <button
                             className="w-full text-left flex items-center outline-none focus:outline-none"
                         >
-                            <span className="pr-1 flex-1">TOP</span>
+                            <span className="pr-1 flex-1 hover:text-red-500">TOP</span>
                             <span className="mr-auto">
                                 <svg
                                     className="fill-current h-4 w-4
@@ -51,11 +69,11 @@ const NewArrivalDropDown = () => {
                             className="bg-white border rounded-sm absolute top-0 right-0 
                             transition duration-150 ease-in-out origin-top-left
                             min-w-32 w-56">
-                            <li className="px-3 py-1 hover:bg-gray-100">T-Shirt</li>
-                            <li className="px-3 py-1 hover:bg-gray-100">Shirt & Polo</li>
-                            <li className="px-3 py-1 hover:bg-gray-100">Hoodie & Sweatshirt</li>
-                            <li className="px-3 py-1 hover:bg-gray-100">Jacket</li>
-                            <li className="px-3 py-1 hover:bg-gray-100">Women</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">T-Shirt</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Shirt & Polo</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Hoodie & Sweatshirt</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Jacket</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Women</li>
                             {/* <li className="rounded-sm relative px-3 py-1 hover:bg-gray-100">
                                 <button
                                     className="w-full text-left flex items-center outline-none focus:outline-none"
@@ -91,7 +109,7 @@ const NewArrivalDropDown = () => {
                         <button
                             className="w-full text-left flex items-center outline-none focus:outline-none"
                         >
-                            <span className="pr-1 flex-1">BOTTOM</span>
+                            <span className="pr-1 flex-1 hover:text-red-500">BOTTOM</span>
                             <span className="mr-auto">
                                 <svg
                                     className="fill-current h-4 w-4
@@ -106,12 +124,11 @@ const NewArrivalDropDown = () => {
                             </span>
                         </button>
                         <ul
-                            className="bg-white border rounded-sm absolute top-0 right-0 
-                            transition duration-150 ease-in-out origin-top-left
-                            min-w-32 w-56"
+                            className={"bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32 w-56 "
+                            }
                         >
-                            <li className="px-3 py-1 hover:bg-gray-100">Pants</li>
-                            <li className="px-3 py-1 hover:bg-gray-100">Shorts</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Pants</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Shorts</li>
                         </ul>
                     </li>
 
@@ -120,7 +137,7 @@ const NewArrivalDropDown = () => {
                         <button
                             className="w-full text-left flex items-center outline-none focus:outline-none"
                         >
-                            <span className="pr-1 flex-1">ACCESSORY</span>
+                            <span className="pr-1 flex-1 hover:text-red-500">ACCESSORY</span>
                             <span className="mr-auto">
                                 <svg
                                     className="fill-current h-4 w-4
@@ -139,13 +156,13 @@ const NewArrivalDropDown = () => {
                             transition duration-150 ease-in-out origin-top-left 
                             min-w-32 w-56"
                         >
-                            <li className="px-3 py-1 hover:bg-gray-100">Bag & Backpack</li>
-                            <li className="px-3 py-1 hover:bg-gray-100">Hat</li>
-                            <li className="px-3 py-1 hover:bg-gray-100">Others</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Bag & Backpack</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Hat</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Others</li>
                         </ul>
                     </li>
-                </ul>
-            </div>
+                </ul >
+            </div >
 
             <style>
                 {`

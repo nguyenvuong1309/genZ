@@ -21,6 +21,7 @@ import CartPage from './pages/CartPage'
 import TinTucPage from './pages/TinTucPage'
 import GioiThieuPage from './pages/GioiThieuPage'
 import LienHe from './pages/LienHe'
+import CheckOutPage from './pages/CheckoutPage'
 
 function App() {
 
@@ -33,7 +34,7 @@ function App() {
           <Route path="/stand-for-northside" element={<StandForNorthSide />} />
           <Route path="/top" element={<TopProductPage />} />
           <Route path="/bottom" element={<BottomProductPage />} />
-          <Route path="/accessary" element={<AccessaryProductPage />} />
+          <Route path="/accessory" element={<AccessaryProductPage />} />
           <Route path="/:productId" element={<ProductDetail />} />
           <Route path="/new-arrival" element={<NewPageArrival />} />
           <Route path="/collections/all" element={<CollectionPage />} />
@@ -46,6 +47,7 @@ function App() {
           <Route path="/gioithieu" element={<GioiThieuPage />} />
           <Route path="/all-sale" element={<CollectionPage />} />
           <Route path="/lienhe" element={<LienHe />} />
+          <Route path="/checkout/:id" element={<CheckOutPage />} />
           <Route path="*" element={<NoPage />} />
         </Route>
         <Route path='/a' element={<HomePage />} />

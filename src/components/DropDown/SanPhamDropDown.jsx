@@ -80,30 +80,30 @@ const SanPhamDropDown = () => {
 
                     <div className="h-48 w-full">
                         <div className="w-[90%] grid grid-cols-[1fr_1fr_1fr_1fr]">
-                            <div className="font-bold justify-center ">STAND FOR NORTHSIDE</div>
+                            <div className="font-bold justify-center " onClick={() => navigate("/stand-for-northside")}>STAND FOR NORTHSIDE</div>
                             <div>
                                 <div>TOP</div>
                                 <div>
-                                    <div className="hover:text-red-500">T-Shirt</div>
-                                    <div className="hover:text-red-500">Shirt & Polo</div>
-                                    <div className="hover:text-red-500">Hoodie & Sweatshirt</div>
-                                    <div className="hover:text-red-500">Jacket</div>
-                                    <div className="hover:text-red-500">Women</div>
+                                    <div className="hover:text-red-500" onClick={() => navigate("/all-sale")}>T-Shirt</div>
+                                    <div className="hover:text-red-500" onClick={() => navigate("/all-sale")}>Shirt & Polo</div>
+                                    <div className="hover:text-red-500" onClick={() => navigate("/all-sale")}>Hoodie & Sweatshirt</div>
+                                    <div className="hover:text-red-500" onClick={() => navigate("/all-sale")}>Jacket</div>
+                                    <div className="hover:text-red-500" onClick={() => navigate("/all-sale")}>Women</div>
                                 </div>
                             </div>
                             <div>
                                 <div>BOTTOM</div>
                                 <div>
-                                    <div className="hover:text-red-500">Pants</div>
-                                    <div className="hover:text-red-500">Shorts</div>
+                                    <div className="hover:text-red-500" onClick={() => navigate("/all-sale")}>Pants</div>
+                                    <div className="hover:text-red-500" onClick={() => navigate("/all-sale")}>Shorts</div>
                                 </div>
                             </div>
                             <div>
                                 <div>ACCESSORY</div>
                                 <div>
-                                    <div className="hover:text-red-500">Bag & Backpack</div>
-                                    <div className="hover:text-red-500">Hat</div>
-                                    <div className="hover:text-red-500">Others</div>
+                                    <div className="hover:text-red-500" onClick={() => navigate("/all-sale")}>Bag & Backpack</div>
+                                    <div className="hover:text-red-500" onClick={() => navigate("/all-sale")}>Hat</div>
+                                    <div className="hover:text-red-500" onClick={() => navigate("/all-sale")}>Others</div>
                                 </div>
                             </div>
                         </div>

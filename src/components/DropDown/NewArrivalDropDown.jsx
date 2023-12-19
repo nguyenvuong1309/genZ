@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 
@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 const NewArrivalDropDown = () => {
     const location = useLocation();
     const [scrollPosition, setScrollPosition] = useState(0);
+    const navigate = useNavigate();
     useEffect(() => {
         const handleScroll = () => {
             setScrollPosition(window.scrollY);
@@ -51,7 +52,7 @@ const NewArrivalDropDown = () => {
                         <button
                             className="w-full text-left flex items-center outline-none focus:outline-none"
                         >
-                            <span className="pr-1 flex-1 hover:text-red-500">TOP</span>
+                            <span className="pr-1 flex-1 hover:text-red-500" onClick={() => navigate("/top")}>TOP</span>
                             <span className="mr-auto">
                                 <svg
                                     className="fill-current h-4 w-4
@@ -69,11 +70,11 @@ const NewArrivalDropDown = () => {
                             className="bg-white border rounded-sm absolute top-0 right-0 
                             transition duration-150 ease-in-out origin-top-left
                             min-w-32 w-56">
-                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">T-Shirt</li>
-                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Shirt & Polo</li>
-                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Hoodie & Sweatshirt</li>
-                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Jacket</li>
-                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Women</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500" onClick={() => navigate("/all-sale")}>T-Shirt</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500" onClick={() => navigate("/all-sale")}>Shirt & Polo</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500" onClick={() => navigate("/all-sale")}>Hoodie & Sweatshirt</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500" onClick={() => navigate("/all-sale")}>Jacket</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500" onClick={() => navigate("/all-sale")}>Women</li>
                             {/* <li className="rounded-sm relative px-3 py-1 hover:bg-gray-100">
                                 <button
                                     className="w-full text-left flex items-center outline-none focus:outline-none"
@@ -109,7 +110,7 @@ const NewArrivalDropDown = () => {
                         <button
                             className="w-full text-left flex items-center outline-none focus:outline-none"
                         >
-                            <span className="pr-1 flex-1 hover:text-red-500">BOTTOM</span>
+                            <span className="pr-1 flex-1 hover:text-red-500" onClick={() => navigate("/bottom")}>BOTTOM</span>
                             <span className="mr-auto">
                                 <svg
                                     className="fill-current h-4 w-4
@@ -127,8 +128,8 @@ const NewArrivalDropDown = () => {
                             className={"bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32 w-56 "
                             }
                         >
-                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Pants</li>
-                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Shorts</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500" onClick={() => navigate("/all-sale")}>Pants</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500" onClick={() => navigate("/all-sale")}>Shorts</li>
                         </ul>
                     </li>
 
@@ -137,7 +138,7 @@ const NewArrivalDropDown = () => {
                         <button
                             className="w-full text-left flex items-center outline-none focus:outline-none"
                         >
-                            <span className="pr-1 flex-1 hover:text-red-500">ACCESSORY</span>
+                            <span className="pr-1 flex-1 hover:text-red-500" onClick={() => navigate("/accessory")}>ACCESSORY</span>
                             <span className="mr-auto">
                                 <svg
                                     className="fill-current h-4 w-4
@@ -156,9 +157,9 @@ const NewArrivalDropDown = () => {
                             transition duration-150 ease-in-out origin-top-left 
                             min-w-32 w-56"
                         >
-                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Bag & Backpack</li>
-                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Hat</li>
-                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500">Others</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500" onClick={() => navigate("/all-sale")}>Bag & Backpack</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500" onClick={() => navigate("/all-sale")}>Hat</li>
+                            <li className="px-3 py-1 hover:bg-gray-100 hover:text-red-500" onClick={() => navigate("/all-sale")}>Others</li>
                         </ul>
                     </li>
                 </ul >

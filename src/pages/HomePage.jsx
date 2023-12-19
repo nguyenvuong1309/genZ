@@ -27,7 +27,7 @@ const HomePage = () => {
                     <div onClick={() => { navigate("/bottom") }}>
                         <img src={homepage_bottom_image} alt="" />
                     </div>
-                    <div onClick={() => { navigate("/accessary") }}>
+                    <div onClick={() => { navigate("/accessory") }}>
                         <img src={homepage_accessary_image} alt="" />
                     </div>
 

@@ -58,7 +58,7 @@ const TopProductPage = () => {
         //     </div>
         // </div>
         <>
-            <div className='flex justify-center mt-5 mb-5'>
+            <div className='flex justify-center pt-32 mb-5'>
                 <div className='w-11/12 flex justify-between text-lg'>
                     <div>Danh mục</div>
                     <div>Tìm theo +</div>

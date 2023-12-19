@@ -17,11 +17,13 @@ import top_product_description_image from '../assets/TopProduct/top_product_desc
 import { useState } from 'react'
 import ProductItem from '../components/ProductItem'
 import { FaPhoneAlt } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'
 
 
 const ProductDetail = () => {
     const [chooseProductColor, setChooseProductColor] = useState(false);
     const [extraProduct, setExtraProduct] = useState(true);
+    const navigate = useNavigate();
     let top_product_detail_1 = chooseProductColor ? top_product_detail_1_black : clownz_grunge_tshirt_white_1
     let top_product_detail_2 = chooseProductColor ? top_product_detail_2_black : clownz_grunge_tshirt_white_2
     let top_product_detail_3 = chooseProductColor ? top_product_detail_3_black : clownz_grunge_tshirt_white_3
@@ -29,7 +31,7 @@ const ProductDetail = () => {
     let top_product_detail_5 = chooseProductColor ? top_product_detail_5_black : clownz_grunge_tshirt_white_5
     return (
         <>
-            <div className="h-screen flex justify-center mt-20 mb-10">
+            <div className="h-screen flex justify-center pt-32 mb-10">
                 <div className="grid grid-cols-[3fr_5fr_3fr] w-[95%]">
                     <div className="flex  w-[100%]">
                         <div className="w-[50%]">
@@ -58,22 +60,22 @@ const ProductDetail = () => {
                             </div>
                             <div className='flex justify-center'>
                                 <div className="h-[18%] w-[80%]">
-                                    <img src={top_product_detail_2} alt="" className='w-full' />
+                                    <img src={top_product_detail_2} alt="" className='w-full pt-3' />
                                 </div>
                             </div>
                             <div className='flex justify-center'>
                                 <div className="h-[18%] w-[80%]">
-                                    <img src={top_product_detail_3} alt="" className='w-full' />
+                                    <img src={top_product_detail_3} alt="" className='w-full pt-3' />
                                 </div>
                             </div>
                             <div className='flex justify-center'>
                                 <div className="h-[18%] w-[80%]">
-                                    <img src={top_product_detail_4} alt="" className='w-full' />
+                                    <img src={top_product_detail_4} alt="" className='w-full pt-3' />
                                 </div>
                             </div>
                             <div className='flex justify-center'>
                                 <div className="h-[18%] w-[80%]">
-                                    <img src={top_product_detail_5} alt="" className='w-full' />
+                                    <img src={top_product_detail_5} alt="" className='w-full pt-3' />
                                 </div>
                             </div>
                         </div>
@@ -141,7 +143,7 @@ const ProductDetail = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='bg-[#19ff3b]  hover:bg-[#ff4d4d] mt-5 h-14 flex justify-center items-center'>
+                            <div className='bg-[#19ff3b]  hover:bg-[#ff4d4d] mt-5 h-14 flex justify-center items-center' onClick={() => { navigate("/checkout/id") }}>
                                 <button className='font-bold'>
                                     Thêm vào giỏ hàng
                                 </button>

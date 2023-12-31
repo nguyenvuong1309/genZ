@@ -17,15 +17,17 @@ const TinTucPage = () => {
             <div className='flex justify-center mb-20'>
                 <div className='w-[92%]'>
                     <div>Tin tức</div>
-                    <div className="grid grid-cols-[1fr_1fr]">
-                        <div className='grid grid-cols-[1fr_1fr]'>
+                    <div className="grid grid-cols-[1fr_1fr]
+                    max-[1000px]:grid-cols-[1fr]
+                    ">
+                        <div className='grid grid-cols-[1fr_1fr] mt-10'>
                             <img src={tin_tuc_1} alt="" />
                             <div>
                                 <div className='text-2xl mx-4'>𝐂𝐥𝐨𝐰𝐧𝐙 𝐱 𝐒𝐚𝐢𝐠𝐨𝐧 𝐒𝐰𝐚𝐠𝐠𝐞𝐫 𝐂𝐨𝐥𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐢𝐨𝐧</div>
                                 <button className='mx-4 mt-5 px-10 py-1 border borer-slate-100 font-thin hover:bg-slate-400 hover:text-white'>Xem thêm</button>
                             </div>
                         </div>
-                        <div className='grid grid-cols-[1fr_1fr]'>
+                        <div className='grid grid-cols-[1fr_1fr] mt-10'>
                             <img src={tin_tuc_2} alt="" />
                             <div>
                                 <div className='text-2xl mx-4'>ClownZ x Rap Nhà Làm | Homemade Rapper Collection</div>

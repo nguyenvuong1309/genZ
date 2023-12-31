@@ -17,7 +17,9 @@ const BubbleGumPage = () => {
             </div>
             <div className='flex justify-center'>
                 <div className='w-11/12 grid grid-cols-[1fr_1fr_1fr_1fr]
-                         max-[500px]:grid-cols-1
+                        max-[1300px]:grid-cols-[1fr_1fr_1fr]
+                        max-[1000px]:grid-cols-[1fr_1fr]
+                        max-[500px]:grid-cols-1
                         '>
                     <ProductItem />
                 </div>

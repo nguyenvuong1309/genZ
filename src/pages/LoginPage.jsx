@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
     const navigate = useNavigate();
     return (
-        <div className="flex justify-center my-10">
+        <div className="flex justify-center py-32">
             <div className="w-[70%]">
                 <div className="flex justify-center text-xl">ĐĂNG NHẬP BẰNG TÀI KHOẢN</div>
                 <div className="flex justify-center gap-10 mt-5">

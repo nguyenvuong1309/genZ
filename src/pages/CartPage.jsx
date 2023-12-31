@@ -79,8 +79,8 @@ const CartPage = () => {
                                                 </div>
                                             </div>
                                             <div className="grid pt-10">
-                                                <button className="bg-black text-white py-4">THANH TOÁN NGAY</button>
-                                                <button className="text-black mt-8 py-4 border border-black" onClick={() => { navigate("/all-sale") }}>TIẾP TỤC MUA HÀNG</button>
+                                                <button className="bg-black text-white py-4 hover:bg-slate-500">THANH TOÁN NGAY</button>
+                                                <button className="text-black mt-8 py-4 border border-black hover:bg-slate-300" onClick={() => { navigate("/all-sale") }}>TIẾP TỤC MUA HÀNG</button>
                                             </div>
                                         </div>
                                     </div>

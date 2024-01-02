@@ -9,6 +9,7 @@ import { CiSearch } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import { IoMenuOutline } from "react-icons/io5";
+import { useEffect, useRef, useState } from "react";
 
 
 
@@ -17,16 +18,32 @@ import { IoMenuOutline } from "react-icons/io5";
 
 const HeaderForMobile = () => {
     const navigate = useNavigate();
-    const handleHover = (e) => {
-        e.stopPropagation();
-        // Your hover handling logic here
+
+    const [isArticleOpen, setArticleOpen] = useState(false);
+    const articleRef = useRef();
+
+    const toggleArticle = () => {
+        setArticleOpen(!isArticleOpen);
     };
 
+    const handleOutsideClick = (event) => {
+        if (articleRef.current && !articleRef.current.contains(event.target)) {
+            setArticleOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleOutsideClick);
+
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        };
+    }, []);
+
+
     return (
-        <div onMouseEnter={handleHover}>
-            <div className="w-full bg-slate-200 absolute flex justify-between z-auto"
-                onMouseEnter={(e) => { e.stopPropagation() }}
-            >
+        <div>
+            <div className="w-full  bg-slate-200 absolute flex justify-between z-auto">
                 <div className="w-20"></div>
                 <div className="flex justify-center items-center h-10 font-bold text-2xl" onClick={() => { navigate("/") }}>ClownZ</div>
                 <div className="flex justify-around items-center w-20">
@@ -35,6 +52,8 @@ const HeaderForMobile = () => {
                     <IoBagOutline />
                 </div>
             </div>
+
+
             <div className="flex z-auto"
                 onMouseEnter={(e) => { e.stopPropagation() }}
             >
@@ -337,6 +356,8 @@ const HeaderForMobile = () => {
 
                 </ul>
             </div >
+
+
         </div>
 
     )

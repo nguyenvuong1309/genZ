@@ -7,6 +7,7 @@ import homepage_bottom_image from '../assets/homepage_bottom_image.webp'
 import homepage_accessary_image from '../assets/homepage_accessary_image.webp'
 import homepage_about_image from '../assets/homepage_about_image.webp'
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
 
 
 
@@ -14,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
     const navigate = useNavigate();
     return (
-        <div className=''>
+        <div className='max-[1300px]:pt-10'>
             <div onClick={() => { navigate('/stand-for-northside') }}>
                 <img src={main} alt="" />
             </div>
